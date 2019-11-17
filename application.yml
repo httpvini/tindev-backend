@@ -1,0 +1,1 @@
+dbConnection: 'mongodb+srv://omnistackdev:omnistackdev@cluster0-dpgyi.mongodb.net/omnistack8?retryWrites=true&w=majority'

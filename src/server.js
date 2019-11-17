@@ -1,13 +1,17 @@
 const express = require('express');
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const cors = require('cors');
+const jsyml = require('js-yaml')
 const routes = require('./routes');
 const server = express();
 
-const dbConnection = 'mongodb+srv://omnistackdev:omnistackdev@cluster0-dpgyi.mongodb.net/omnistack8?retryWrites=true&w=majority'
+const dbConnection = jsyml.load(applicatio.yml);
+
 mongoose.connect(dbConnection, {
     useNewUrlParser: true
 });
 
+server.use(cors());
 server.use(express.json());
 server.use(routes);
 
