@@ -1,13 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const jsyml = require('js-yaml')
+const yaml = require('js-yaml');
+const fs = require('fs');
 const routes = require('./routes');
 const server = express();
 
-const dbConnection = jsyml.load(applicatio.yml);
+const dbConnection = yaml.safeLoad(fs.readFileSync('application.yml', 'utf8'));
 
-mongoose.connect(dbConnection, {
+mongoose.connect(dbConnection.dbUrl, {
     useNewUrlParser: true
 });
 
